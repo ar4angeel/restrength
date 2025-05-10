@@ -1,9 +1,40 @@
-Можно использовать: 
+Запуск:
 
+1. **redis**
+   ```bash
+   redis-server
+   ```
+
+2. зависимости:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **celery** worker:
+   ```bash
+   celery -A tasks.celery_app worker --loglevel=info
+   ```
+
+4. **flask**-приложение:
+   ```bash
+   python app.py
+   ```
+
+5. тест:
+
+**POST /submit**
+```json
+{
+  "n": 10000
+}
+```
+
+**GET /result/{task_id}**
+
+---
 - Postman 
 - curl 
 - Python requests
-
 curl
 ```bash
 # Получить все задачи
